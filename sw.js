@@ -1,4 +1,4 @@
-const CACHE='wumeng-portfolio-v8';
+const CACHE='wumeng-portfolio-v9';
 const CORE=[
   '/wumeng-portfolio/pixel.html','/wumeng-portfolio/pixel-style.css','/wumeng-portfolio/pixel-script.js',
   '/wumeng-portfolio/pixel-projects/engineering-cloud.html','/wumeng-portfolio/pixel-projects/super-factory.html','/wumeng-portfolio/pixel-projects/pharmacist-workstation.html','/wumeng-portfolio/pixel-projects/medical-cost-analysis.html','/wumeng-portfolio/pixel-projects/sports-service-platform.html','/wumeng-portfolio/pixel-projects/smart-charging-cloud.html',
