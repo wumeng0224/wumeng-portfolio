@@ -27,7 +27,7 @@
   }
 
   var soundStyle=document.createElement('style');
-  soundStyle.textContent='.sound-toggle{position:fixed;z-index:10001;right:18px;bottom:18px;border:2px solid #68f6ff;background:#02030a;color:#68f6ff;padding:9px 11px;font:700 11px "Courier New",monospace;box-shadow:4px 4px 0 #1762ff}.sound-gate{position:fixed;inset:0;z-index:10002;display:grid;place-items:center;background:#02030af2;padding:24px}.sound-gate button{border:2px solid #68f6ff;background:#1762ff;color:#fff;padding:18px 24px;font:900 14px "Courier New","Microsoft YaHei",monospace;letter-spacing:.08em;box-shadow:8px 8px 0 #68f6ff}.sound-gate small{display:block;margin-top:9px;font-size:10px;color:#dffcff}@media(max-width:760px){.sound-toggle{right:12px;bottom:12px}}';
+  soundStyle.textContent='.sound-toggle{position:fixed;z-index:10001;right:18px;bottom:18px;border:2px solid #68f6ff;background:#02030a;color:#68f6ff;padding:9px 11px;font:700 11px "Courier New",monospace;box-shadow:4px 4px 0 #1762ff}.sound-gate{position:fixed;inset:0;z-index:10002;display:flex;align-items:center;justify-content:center;background:#02030af2;padding:24px}.sound-gate button{border:2px solid #68f6ff;background:#1762ff;color:#fff;min-width:150px;padding:18px 26px;text-align:center;font:900 14px "Courier New","Microsoft YaHei",monospace;letter-spacing:.08em;box-shadow:8px 8px 0 #68f6ff}.sound-gate small{display:block;margin-top:9px;font-size:10px;color:#dffcff}@media(max-width:760px){.sound-toggle{right:12px;bottom:12px}}';
   document.head.appendChild(soundStyle);
   var toggle=document.createElement('button');
   toggle.className='sound-toggle';toggle.type='button';
@@ -37,7 +37,7 @@
 
   if(!muted&&!sessionStorage.getItem('pixelSoundStarted')){
     var gate=document.createElement('div');gate.className='sound-gate';
-    gate.innerHTML='<button type="button">▶ 点击进入作品集<small>开启原创 8-BIT 音效</small></button>';
+    gate.innerHTML='<button type="button">点击进入</button>';
     document.body.appendChild(gate);
     gate.querySelector('button').addEventListener('click',function(e){e.stopPropagation();sessionStorage.setItem('pixelSoundStarted','1');introSound();gate.style.opacity='0';gate.style.transition='opacity .22s';setTimeout(function(){gate.remove()},230)});
   }
@@ -64,3 +64,4 @@
   }
   addEventListener('pointermove',function(e){var now=performance.now();if(now-lastSpawn<42)return;lastSpawn=now;particles.push({x:e.clientX-4,y:e.clientY+8,size:4+Math.random()*3,life:1});if(particles.length>12)particles.shift();if(!running){running=true;requestAnimationFrame(frame)}},{passive:true});
 })();
+
